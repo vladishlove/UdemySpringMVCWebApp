@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <!-- LOG_FILE_NAME: Java system properties set on the command line  -->
+    <!-- LOG_HOME: Set at this line below -->
+    <property name="LOG_HOME" value="C:\Users\Vlad\IdeaProjects\SpringWebAppUdemy\logs" />
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %-5level [%thread] - [%logger]- %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_HOME}/error.log</file>
+        <encoder>
+            <pattern>%date %-5level [%thread] - [%logger] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="TRACE" />
+    <logger name="org.springframework.web" level="TRACE" />
+    <root level="trace">
+        <appender-ref ref="console" />
+    </root>
+</configuration>
